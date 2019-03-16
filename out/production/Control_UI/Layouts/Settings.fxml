@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.SplitMenuButton?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="246.0" style="-fx-background-color: #263238; -fx-border-color: #FFFFFF;" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.SettingsController">
+   <top>
+      <HBox alignment="CENTER_RIGHT" prefHeight="27.0" prefWidth="273.0" style="-fx-background-color: #FFFFFF;" BorderPane.alignment="CENTER">
+         <children>
+            <HBox alignment="CENTER_LEFT" onMouseDragged="#dragged" onMousePressed="#pressed" prefHeight="18.0" prefWidth="253.0">
+               <children>
+                  <Label text="Settings">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="8.0" />
+                     </HBox.margin>
+                  </Label>
+               </children>
+            </HBox>
+            <FontAwesomeIconView fill="#f23e3e" glyphName="CIRCLE" onMousePressed="#close" size="13">
+               <HBox.margin>
+                  <Insets right="8.0" />
+               </HBox.margin>
+            </FontAwesomeIconView>
+         </children>
+      </HBox>
+   </top>
+   <center>
+      <AnchorPane prefHeight="239.0" prefWidth="273.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label layoutX="19.0" layoutY="31.0" text="Auto Connect" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <Label layoutX="19.0" layoutY="71.0" text="Opacity" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <Label layoutX="19.0" layoutY="112.0" text="Theme" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <Label layoutX="19.0" layoutY="156.0" text="Minimize into Tray" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <Separator layoutX="136.0" layoutY="21.0" orientation="VERTICAL" prefHeight="196.0" prefWidth="0.0" />
+            <Slider fx:id="SeekBar" layoutX="139.0" layoutY="73.0" max="1.0" onMouseDragged="#opacityAdjust" onMouseReleased="#opacitySet" prefHeight="14.0" prefWidth="101.0" style="-fx-background-insets: 0;" value="1.0" />
+            <ToggleButton fx:id="AutoConnectOption" layoutX="173.0" layoutY="27.0" mnemonicParsing="false" onMousePressed="#autoConn" style="-fx-background-color: #35819C;" text="OFF" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font></ToggleButton>
+            <SplitMenuButton fx:id="themeOp" layoutX="158.0" layoutY="108.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="68.0" style="-fx-background-insets: 0;" text="Light">
+              <items>
+                <MenuItem mnemonicParsing="false" onAction="#selectLight" text="Light" />
+                <MenuItem mnemonicParsing="false" onAction="#selectDark" text="Dark" />
+              </items>
+            </SplitMenuButton>
+            <CheckBox fx:id="trayOption" layoutX="184.0" layoutY="156.0" mnemonicParsing="false" style="-fx-background-insets: 0;" />
+            <Button layoutX="195.0" layoutY="237.0" mnemonicParsing="false" onMousePressed="#save" style="-fx-background-color: #5C6BC0;" text="Save" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="11.0" />
+               </font></Button>
+            <Button layoutX="134.0" layoutY="237.0" mnemonicParsing="false" onMousePressed="#cancel" style="-fx-background-color: #C2185B;" text="Cancel" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="11.0" />
+               </font></Button>
+            <Label layoutX="19.0" layoutY="192.0" text="Always On Top" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <CheckBox fx:id="alwaysOnTop" layoutX="184.0" layoutY="192.0" mnemonicParsing="false" style="-fx-background-insets: 0;" />
+         </children>
+      </AnchorPane>
+   </center>
+</BorderPane>

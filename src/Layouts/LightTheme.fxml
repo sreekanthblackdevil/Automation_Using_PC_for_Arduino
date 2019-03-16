@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane fx:id="PrimaryScene" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="349.0" prefWidth="505.0" style="-fx-background-color: #D5D5D5;" stylesheets="@../Styles/Style.css" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.MainController">
+   <top>
+      <HBox alignment="CENTER_RIGHT" prefHeight="29.0" prefWidth="505.0" style="-fx-background-color: #FFFFFF;" BorderPane.alignment="CENTER">
+         <children>
+            <HBox alignment="CENTER_LEFT" onMouseDragged="#dragged" onMouseEntered="#visible" onMouseExited="#vanish" onMousePressed="#pressed" prefHeight="29.0" prefWidth="448.0">
+               <children>
+                  <Label text="Control Panel">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="10.0" right="5.0" />
+                     </HBox.margin>
+                  </Label>
+               </children>
+            </HBox>
+            <FontAwesomeIconView glyphName="COG" onMousePressed="#settings" size="15">
+               <HBox.margin>
+                  <Insets right="20.0" />
+               </HBox.margin>
+            </FontAwesomeIconView>
+            <FontAwesomeIconView fill="#ff990d" glyphName="CIRCLE" onMousePressed="#minimize" size="14">
+               <HBox.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </HBox.margin>
+            </FontAwesomeIconView>
+            <FontAwesomeIconView fill="#81d735" glyphName="CIRCLE" onMousePressed="#opacityChange" size="14">
+               <HBox.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </HBox.margin>
+            </FontAwesomeIconView>
+            <FontAwesomeIconView fill="#f23e3e" glyphName="CIRCLE" onMousePressed="#close" size="14">
+               <HBox.margin>
+                  <Insets bottom="5.0" left="5.0" right="10.0" top="5.0" />
+               </HBox.margin>
+            </FontAwesomeIconView>
+         </children>
+      </HBox>
+   </top>
+   <center>
+      <AnchorPane prefHeight="320.0" prefWidth="464.0" BorderPane.alignment="CENTER">
+         <children>
+            <TextField fx:id="commandField" layoutX="297.0" layoutY="60.0" promptText="Command" />
+            <Button layoutX="450.0" layoutY="60.0" mnemonicParsing="false" onMousePressed="#send" prefHeight="15.0" prefWidth="43.0" text="Send" />
+            <Label fx:id="errorField" layoutX="297.0" layoutY="85.0" prefHeight="17.0" prefWidth="140.0">
+               <font>
+                  <Font name="System Italic" size="12.0" />
+               </font>
+            </Label>
+            <TextArea fx:id="outputField" editable="false" layoutX="14.0" layoutY="208.0" mouseTransparent="true" prefHeight="98.0" prefWidth="209.0" promptText="Output" />
+            <Button layoutX="231.0" layoutY="281.0" mnemonicParsing="false" onMousePressed="#clear_console" text="Clear" />
+            <Button alignment="CENTER_RIGHT" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onMousePressed="#connect" style="-fx-background-color: #9BE15E;" text="Connect">
+               <graphic>
+                  <FontAwesomeIconView glyphName="USB" size="13" />
+               </graphic>
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
+            <Button layoutX="257.0" layoutY="58.0" mnemonicParsing="false" onMousePressed="#microphone" prefHeight="30.0" prefWidth="31.0" style="-fx-background-radius: 40; -fx-border-radius: 40; -fx-background-insets: 0000; -fx-border-insets: 0000; -fx-border-color: #81D735;">
+               <graphic>
+                  <FontAwesomeIconView glyphName="MICROPHONE" size="17" />
+               </graphic>
+            </Button>
+            <FontAwesomeIconView glyphName="UNLOCK" layoutX="485.0" layoutY="19.0" size="14" />
+            <FontAwesomeIconView fill="#d32f2f" glyphName="TIMES_CIRCLE" layoutX="101.0" layoutY="33.0" onMousePressed="#disconnect" size="20" text="" />
+            <Label fx:id="NameField" alignment="CENTER_RIGHT" contentDisplay="RIGHT" layoutX="328.0" layoutY="4.0" prefHeight="23.0" prefWidth="144.0">
+               <font>
+                  <Font name="System Italic" size="12.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+   </center>
+</BorderPane>
